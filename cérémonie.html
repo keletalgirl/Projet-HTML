@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>TPWeb</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Icone.png"> 
+</head>
+<style> 
+    /* Conteneur principal centré */
+.containerceremony {
+    width: 70%;
+    margin: auto; /* centre horizontalement */
+}
+
+/* Centrer tout le contenu interne */
+.container {
+    text-align: center;
+}
+
+/* Style des boutons */
+.button-ceremony {
+    background-color: green; /* fond */
+    color: white; /* texte */
+    border: 2px solid black; /* bordure (5px c’était trop épais) */
+    padding: 15px 40px; /* espace intérieur */
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px; /* espace entre boutons (corrigé) */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* ombre plus réaliste */
+    font-family: 'Times New Roman';
+    cursor: pointer; /* effet clic */
+}
+
+/* Effet au survol */
+.button-ceremony:hover {
+    background-color: darkgreen;
+    transform: scale(1.05);
+}
+
+/* Image centrée et taille identique */
+.main-image {
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: 250px;
+    object-fit: cover; /* évite déformation */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+</style>
+<body>
+
+<!-- Logo cliquable -->
+<a href="apprentissage.html">
+    <img src="logoGI.jpg" width="250" height="180" alt="Logo GI">
+</a>
+
+<div class="containerceremony">
+
+    <h1 style="text-align: center;">L'ENSIBS célèbre ses diplômés</h1>
+
+    <div class="container">
+
+        <p class="description">
+            La cérémonie de remise des diplômes est un événement majeur dans la vie de l’école d’ingénieur,
+            cette cérémonie est l’occasion de célébrer à la fois la réussite des élèves ingénieurs et la fin de leurs études.
+            Organisée depuis de nombreuses années, cette cérémonie est devenue un incontournable.
+        </p>
+
+        <!-- Image qui va changer -->
+        <img id="monImage" src="diplome.jpg" alt="Remise des diplômes" class="main-image">
+
+        <p>
+            <button class="button-ceremony" onclick="promotion(2023)">Promotion 2023</button> 
+            <button class="button-ceremony" onclick="promotion(2024)">Promotion 2024</button> 
+            <button class="button-ceremony" onclick="promotion(2025)">Promotion 2025</button>
+        </p>
+
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+function promotion(annee) {
+    var image;
+
+    if (annee == 2023){
+        image = "promotion_2023.jpg";
+    }
+    else if (annee == 2024){
+        image = "promotion_2024.jpg";
+    }
+    else { 
+        image = "promotion_2025.jpg";
+    }
+
+    document.getElementById("monImage").src = image;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plus d'informations</title>
+<style>
+
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.container_informations{
+    width: 80%;
+    margin: auto;
+}
+
+.logo{
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+}
+
+#Iframe_ENSIBS{
+    border: 2px solid hsl(300, 42%, 71%);
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+}
+
+#Iframe_ENSIBS_a{
+    color: #ec98ec;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#Iframe_ENSIBS_a:hover{
+    text-decoration: underline;
+    color: rgb(233, 176, 216);
+}
+
+.adresse{
+    background-color: rgb(240, 241, 177);
+    padding: 10px;
+    width: 70%;
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+#button-myfooter,
+#dateButton{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#section{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+</style>
+</head>
+<body>
+    <!-- Logo -->
+    <a>
+        <img src="logoGI.jpg" alt="Logo Génie Industriel ENSIBS" class="logo">
+    </a>
+
+    <div class="container_informations">
+        <h2>Plus d'informations</h2>
+
+        <iframe 
+            src="https://www-ensibs.univ-ubs.fr/fr/index.html"
+            id="Iframe_ENSIBS">
+        </iframe>
+
+        <p>
+            Découvrir plus d'informations sur notre site :
+            <a href="https://www-ensibs.univ-ubs.fr/fr/index.html">
+               ensibs.fr
+            </a>
+        </p>
+
+        <!-- Contact -->
+        <h2>Nous contacter</h2>
+
+        <div class="adresse">
+            Adresse : 17 Bd Flandres Dunkerque 1940, 56100 Lorient
+        </div>
+
+        <h3 id="MyfooterJS2">
+            Retrouvez nous sur notre site de Lorient
+        </h3>
+
+        <button type="button"
+                onclick="myFunction()"
+                id="button-myfooter">
+            Retrouvez nous!
+        </button>
+        <h2>Dernière consultation</h2>
+        <button onclick="myFunction_date()" id="dateButton">
+            Cliquer ici.
+        </button>
+
+        <p id="section"></p>
+
+    </div>
+    <script>
+
+        function myFunction() {
+
+            document.getElementById("MyfooterJS2").style.fontSize = "35px";
+
+            document.getElementById("MyfooterJS2").style.color = "white";
+
+            document.getElementById("MyfooterJS2").style.backgroundColor = "pink";
+
+            document.getElementById("MyfooterJS2").innerHTML =
+            "Bienvenue sur le site ENSIBS Lorient !";
+        }
+
+        function myFunction_date() {
+
+            document.getElementById("section").textContent =
+            new Date().toLocaleString("fr-FR", {
+
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
