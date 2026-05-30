@@ -1,167 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Encodage UTF-8 pour les accents -->
-    <meta charset="UTF-8">
-    <!-- Liaison avec une feuille CSS externe -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Titre affiché dans l'onglet -->
-    <title>TPWeb</title>
-    <!-- Icône affichée dans l'onglet du navigateur -->
-    <link rel="shortcut icon" href="Icone.png">
+
+<meta charset="UTF-8">
+<title>Cérémonie</title>
+
+<style>
+
+/* Conteneur centré */
+.container {
+    text-align: center;
+}
+
+/* Boutons */
+button {
+    background: green;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+</style>
 </head>
+
 <body>
-<!-- ========================= -->
-<!-- LOGO CLIQUABLE -->
-<!-- ========================= -->
 
-<!--
-    Quand on clique sur le logo,
-    on est redirigé vers apprentissage.html
--->
-<a href="apprentissage.html">
+<!-- Image principale modifiée en JS -->
+<img id="monImage" src="diplome.jpg" width="400">
 
-    <!-- Image du logo -->
-    <img src="logoGI.jpg"
-         width="250"
-         height="180"
-         alt="Logo GI">
-</a>
-<!-- ========================= -->
-<!-- CONTENEUR PRINCIPAL -->
-<!-- ========================= -->
-
-<div class="containerceremony">
-
-    <!-- Titre principal -->
-    <h1 style="text-align: center;">
-
-        L'ENSIBS célèbre ses diplômés
-
-    </h1>
-
-    <!-- Bloc centré -->
-    <div class="container">
-
-        <!-- Texte descriptif -->
-        <p class="description">
-
-            La cérémonie de remise des diplômes est un événement majeur
-            dans la vie de l’école d’ingénieur.
-
-        </p>
-
-        <!-- ========================= -->
-        <!-- IMAGE QUI VA CHANGER -->
-        <!-- ========================= -->
-
-        <!--
-            id="monImage"
-            permettra au JavaScript
-            de retrouver cette image
-        -->
-        <img id="monImage"
-             src="diplome.jpg"
-             alt="Remise des diplômes"
-             class="main-image">
-
-        <!-- ========================= -->
-        <!-- BOUTONS -->
-        <!-- ========================= -->
-
-        <p>
-
-            <!--
-                Lors du clic,
-                on envoie 2023
-                à la fonction promotion()
-            -->
-            <button class="button-ceremony"
-                    onclick="promotion(2023)">
-
-                Promotion 2023
-
-            </button>
-
-            <!-- Bouton promotion 2024 -->
-            <button class="button-ceremony"
-                    onclick="promotion(2024)">
-
-                Promotion 2024
-
-            </button>
-
-            <!-- Bouton promotion 2025 -->
-            <button class="button-ceremony"
-                    onclick="promotion(2025)">
-
-                Promotion 2025
-
-            </button>
-
-        </p>
-
-    </div>
-
-</div>
-
-<!-- ========================= -->
-<!-- JAVASCRIPT -->
-<!-- ========================= -->
+<!-- Boutons avec paramètre -->
+<button onclick="changer(2023)">2023</button>
+<button onclick="changer(2024)">2024</button>
+<button onclick="changer(2025)">2025</button>
 
 <script>
 
-    /*
-        Fonction appelée lorsqu'on clique
-        sur un des boutons
-    */
-    function promotion(annee) {
+    /* ======================================
+       FONCTION AVEC PARAMÈTRE
+       (change l'image affichée)
+    ====================================== */
+    function changer(annee) {
 
-        /*
-            Variable qui contiendra
-            le nom de l'image à afficher
-        */
-        var image;
+        // variable pour stocker l'image
+        let image;
 
-        /*
-            Si l'année reçue vaut 2023
-        */
-        if (annee == 2023){
-
-            image = "promotion_2023.jpg";
-
+        // condition selon l'année choisie
+        if (annee == 2023) {
+            image = "promo2023.jpg";
         }
-
-        /*
-            Sinon si l'année vaut 2024
-        */
-        else if (annee == 2024){
-
-            image = "promotion_2024.jpg";
-
+        else if (annee == 2024) {
+            image = "promo2024.jpg";
         }
-
-        /*
-            Sinon
-            (donc ici 2025)
-        */
         else {
-
-            image = "promotion_2025.jpg";
-
+            image = "promo2025.jpg";
         }
 
-        /*
-            Récupère l'image ayant
-            l'id "monImage"
-
-            puis modifie son attribut src
-
-            => l'image affichée change
-        */
+        // changement de l'image affichée
         document.getElementById("monImage").src = image;
-
     }
 
 </script>
