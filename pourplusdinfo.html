@@ -1,212 +1,162 @@
-<!-- Déclare HTML5 -->
 <!DOCTYPE html>
-
-<!-- Début du document HTML -->
 <html lang="fr">
-
 <head>
-
-    <!-- Encodage UTF-8 -->
     <meta charset="UTF-8">
-
-    <!-- Adaptation mobile -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <!-- Titre de l'onglet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plus d'informations</title>
+<style>
 
+body{
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.container_informations{
+    width: 80%;
+    margin: auto;
+}
+
+.logo{
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+}
+
+#Iframe_ENSIBS{
+    border: 2px solid hsl(300, 42%, 71%);
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+}
+
+#Iframe_ENSIBS_a{
+    color: #ec98ec;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#Iframe_ENSIBS_a:hover{
+    text-decoration: underline;
+    color: rgb(233, 176, 216);
+}
+
+.adresse{
+    background-color: rgb(240, 241, 177);
+    padding: 10px;
+    width: 70%;
+    margin: 20px auto;
+    font-weight: bold;
+}
+
+#button-myfooter,
+#dateButton{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#section{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+</style>
 </head>
-
 <body>
-
-    <!-- ================================= -->
-    <!-- LOGO -->
-    <!-- ================================= -->
-
-    <!-- Image du logo -->
+    <!-- Raccourci d'image affichant le logo de la formation GI -->
     <a>
-
-        <img src="logoGI.jpg"
-             alt="Logo Génie Industriel ENSIBS"
-             class="logo">
-
+        <img src="logoGI.jpg" alt="Logo Génie Industriel ENSIBS" class="logo">
     </a>
 
-    <!-- Conteneur principal -->
+    <!-- Section regroupant les services de consultation externe et l'affichage des informations de contact -->
     <div class="container_informations">
-
-        <!-- Titre -->
         <h2>Plus d'informations</h2>
 
-        <!-- ================================= -->
-        <!-- IFRAME -->
-        <!-- ================================= -->
-
-        <!--
-            Affiche directement
-            le site ENSIBS dans la page
-        -->
-        <iframe
-
+        <!-- Fenêtre d'intégration interactive (iframe) embarquant directement la page d'accueil officielle de l'ENSIBS -->
+        <iframe 
             src="https://www-ensibs.univ-ubs.fr/fr/index.html"
-
             id="Iframe_ENSIBS">
-
         </iframe>
 
-        <!-- Lien vers le site -->
+        <!-- Lien textuel secondaire de secours pointant vers l'URL externe de l'école -->
         <p>
-
             Découvrir plus d'informations sur notre site :
-
             <a href="https://www-ensibs.univ-ubs.fr/fr/index.html">
-
-                ensibs.fr
-
+               ensibs.fr
             </a>
-
         </p>
 
-        <!-- ================================= -->
-        <!-- CONTACT -->
-        <!-- ================================= -->
-
+        <!-- Coordonnées géographiques de localisation physique de l'établissement -->
         <h2>Nous contacter</h2>
 
         <div class="adresse">
-
-            Adresse :
-            17 Bd Flandres Dunkerque 1940,
-            56100 Lorient
-
+            Adresse : 17 Bd Flandres Dunkerque 1940, 56100 Lorient
         </div>
 
-        <!-- ================================= -->
-        <!-- TEXTE MODIFIÉ PAR JAVASCRIPT -->
-        <!-- ================================= -->
-
-        <!--
-            Cet élément sera modifié
-            grâce à getElementById()
-        -->
+        <!-- Titre d'accueil dont les styles visuels et le texte seront transformés par la fonction 'myFunction()' -->
         <h3 id="MyfooterJS2">
-
             Retrouvez nous sur notre site de Lorient
-
         </h3>
 
-        <!--
-            Quand on clique,
-            la fonction myFunction()
-            est exécutée
-        -->
+        <!-- Bouton d'action exécutant le script de reformatage de styles graphiques lors du clic -->
         <button type="button"
-
                 onclick="myFunction()"
-
                 id="button-myfooter">
-
-            Retrouvez nous !
-
+            Retrouvez nous!
         </button>
-
-        <!-- ================================= -->
-        <!-- DATE ET HEURE -->
-        <!-- ================================= -->
-
+        
         <h2>Dernière consultation</h2>
-
-        <!-- Lance myFunction_date() -->
-        <button onclick="myFunction_date()"
-                id="dateButton">
-
-            Cliquer ici
-
+        <!-- Bouton déclenchant l'insertion de l'horodatage exact au clic via la fonction 'myFunction_date()' -->
+        <button onclick="myFunction_date()" id="dateButton">
+            Cliquer ici.
         </button>
 
-        <!--
-            Zone vide qui recevra
-            la date et l'heure
-        -->
+        <!-- Zone d'injection textuelle vide prête à accueillir la date formatée par le JavaScript -->
         <p id="section"></p>
 
     </div>
-
-    <!-- ================================= -->
-    <!-- JAVASCRIPT -->
-    <!-- ================================= -->
-
+    
+    <!-- Zone d'exécution des scripts de manipulation d'éléments et de génération de dates -->
     <script>
 
-        /*
-            Fonction appelée
-            au clic du premier bouton
-        */
+        // Fonction chargée de modifier simultanément plusieurs propriétés de style CSS et le contenu d'un titre
         function myFunction() {
+            // Sélection du composant cible par son id unique "MyfooterJS2"
+            var element = document.getElementById("MyfooterJS2");
 
-            /*
-                Change la taille du texte
-            */
-            document.getElementById("MyfooterJS2")
-                    .style.fontSize = "35px";
+            // Altération directe de la taille de la police d'écriture à 35 pixels
+            element.style.fontSize = "35px";
 
-            /*
-                Change la couleur du texte
-            */
-            document.getElementById("MyfooterJS2")
-                    .style.color = "white";
+            // Modification de la couleur du texte appliqué en blanc
+            element.style.color = "white";
 
-            /*
-                Change la couleur du fond
-            */
-            document.getElementById("MyfooterJS2")
-                    .style.backgroundColor = "pink";
+            // Application d'une couleur de fond arrière-plan rose ("pink")
+            element.style.backgroundColor = "pink";
 
-            /*
-                Change complètement le texte
-            */
-            document.getElementById("MyfooterJS2")
-                    .innerHTML =
-                    "Bienvenue sur le site ENSIBS Lorient !";
-
+            // Remplacement complet de la chaîne de texte affichée à l'écran
+            element.innerHTML = "Bienvenue sur le site ENSIBS Lorient !";
         }
 
-        /*
-            Fonction appelée
-            au clic du deuxième bouton
-        */
+        // Fonction générant l'affichage instantané de la date et de l'heure courante de consultation
         function myFunction_date() {
+            // Extraction de la date courante système au format local français avec options d'affichage explicites
+            document.getElementById("section").textContent =
+            new Date().toLocaleString("fr-FR", {
 
-            /*
-                Affiche la date et l'heure
-                actuelles en français
-            */
-            document.getElementById("section")
-                    .textContent =
+                weekday: "long",   // Nom complet du jour de la semaine (ex: lundi)
+                year: "numeric",   // Année sous forme numérique à 4 chiffres
+                month: "long",     // Nom complet du mois courant (ex: mai)
+                day: "numeric",    // Numéro du jour du mois
+                hour: "2-digit",   // Affichage de l'heure encodé sur deux chiffres
+                minute: "2-digit", // Affichage des minutes sur deux chiffres
+                second: "2-digit"  // Affichage des secondes sur deux chiffres
 
-            new Date().toLocaleString(
-
-                "fr-FR",
-
-                {
-
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    second: "2-digit"
-
-                }
-
-            );
-
+            });
         }
 
     </script>
 
 </body>
-
 </html>
