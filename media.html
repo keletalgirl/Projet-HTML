@@ -1,95 +1,78 @@
-<!-- Déclare l'utilisation de HTML5 -->
 <!DOCTYPE html>
-
-<!-- Début du document HTML en français -->
 <html lang="fr">
-
 <head>
-
-    <!-- Encodage UTF-8 -->
-    <meta charset="UTF-8">
-
-    <!-- Adaptation aux écrans mobiles -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <!-- Titre affiché dans l'onglet -->
-    <title>ENSIBS</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENSIBS</title>
 </head>
+<style>
+   .containerMedia {
+      width: 70%;
+      margin: auto; 
+      align-items: center;   
+      text-align: center;
+  }
+  .video-container {
+    display: flex;/*diviser la section */
+    align-items: center;
+}
+.video {
+    flex: 1; /*ajouter une sous-section */
+    margin: 10px;
+}
+#button-media {
+  display: inline-block; /*centrer*/
+  margin: 20px auto;
+  border: black;
+  cursor: pointer;                                                                          
+  background-color: lightblue; 
+  color: black; 
+  border: 5px solid black;
+  border-radius: 6px;
+  padding: 15px 40px; 
+  text-align: center; 
+  font-size: 22px; 
+  font-weight: bold; 
+  font-family: 'Times New Roman'; 
+}
 
+</style>
 <body>
 
-    <!-- ========================= -->
-    <!-- CONTENEUR PRINCIPAL -->
-    <!-- ========================= -->
+<!-- Bloc d'affichage général de la galerie multimédia d'intégration des étudiants -->
+<div class="containerMedia">
+  <h1>Découvrez le parcours d'école d'ingénieurs GI avec nos étudiants 👇</h1>
 
-    <div class="containerMedia">
+  <!-- Conteneur flexbox organisant horizontalement la grille de vidéos disponibles -->
+  <div class="video-container">
 
-        <!-- Titre principal -->
-        <h1>
-            Découvrez le parcours d'école d'ingénieurs GI
-            avec nos étudiants 👇
-        </h1>
-
-        <!--
-            Contient les deux vidéos
-            affichées côte à côte
-        -->
-        <div class="video-container">
-
-            <!-- ========================= -->
-            <!-- VIDÉO N°1 -->
-            <!-- ========================= -->
-
-            <div class="video">
-
-                <!--
-                    Image miniature YouTube
-                    récupérée automatiquement
-                -->
-                <img src="https://img.youtube.com/vi/1ERXlA3f91E/hqdefault.jpg"
-                     width="100%">
-
-                <!--
-                    Bouton vers la vidéo
-
-                    target="_blank"
-                    => ouvre un nouvel onglet
-                -->
-                <a id="button-media"
-                   href="https://www.youtube.com/watch?v=1ERXlA3f91E"
-                   target="_blank">
-
-                    Découvrir le parcours GI
-
-                </a>
-
-            </div>
-
-            <!-- ========================= -->
-            <!-- VIDÉO N°2 -->
-            <!-- ========================= -->
-
-            <div class="video">
-
-                <img src="https://img.youtube.com/vi/W_ODRlg3KkU/hqdefault.jpg"
-                     width="100%">
-
-                <a id="button-media"
-                   href="https://www.youtube.com/watch?v=W_ODRlg3KkU"
-                   target="_blank">
-
-                    Découvrir le parcours GI
-
-                </a>
-
-            </div>
-
-        </div>
-
+    <!-- Première carte vidéo dédiée au premier témoignage d'étudiant -->
+    <div class="video">
+      <!-- Vignette de prévisualisation récupérée directement depuis les serveurs d'images YouTube -->
+      <img src="https://img.youtube.com/vi/1ERXlA3f91E/hqdefault.jpg" width="100%">
+      
+      <!-- Bouton d'action ouvrant le lien de la vidéo YouTube externe au sein d'un nouvel onglet (target="_blank") -->
+      <a id="button-media"
+         href="https://www.youtube.com/watch?v=1ERXlA3f91E"
+         target="_blank">
+         Découvrir le parcours GI
+      </a>
     </div>
 
-</body>
+    <!-- Seconde carte vidéo dédiée au second témoignage d'étudiant -->
+    <div class="video">
+      <!-- Vignette de prévisualisation de la deuxième vidéo YouTube -->
+      <img src="https://img.youtube.com/vi/W_ODRlg3KkU/hqdefault.jpg" width="100%">
+      
+      <!-- Bouton d'action ouvrant la deuxième vidéo externe au sein d'un nouvel onglet -->
+      <a id="button-media"
+         href="https://www.youtube.com/watch?v=W_ODRlg3KkU"
+         target="_blank">
+         Découvrir le parcours GI
+      </a>
+    </div>
 
+  </div>
+</div>
+</body>
 </html>
