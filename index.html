@@ -1,327 +1,226 @@
-<!-- Déclare la version HTML5 -->
 <!DOCTYPE html>
-
-<!-- Début de la page en français -->
-<html lang="fr">
-
+<html lang="fr" >
 <head>
-
-    <!-- Titre affiché dans l'onglet -->
-    <title>TPWeb</title>
-
-    <!-- Favicon (petite image dans l'onglet) -->
-    <link rel="shortcut icon" href="Icone.png">
-
-    <!-- Ici on pourrait relier une feuille CSS -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
-
+<title>TPWeb</title>
+    <!--Insérer le favicon-->
+    <link rel="shortcut icon" href="Icone.png" > 
+    <!--link css--> 
 </head>
+<style>
+    body, html {/*Styles de base pour html et nody pour s'assurer que l'interface utilisateur utilise toute la hauateru disponiblee et utilise une police lisible*/
+    height: 100%;
+    font-family:Arial;
+    display:flex;
+    flex-direction:column;
+}
+p,h3{ /*Appliquer les modification sur les balises p et h3*/
+    color: dimgray; /*Couleur*/
+    font-size:18px; /*Taille*/
+}
+a{
+    color: green;
+    font-size: 18px;
+}
+span{
+    color:dimgray;
+}
 
+.button-container{
+    width:70%;
+    margin:  auto; /* Centre le contenu horizontalement*/
+
+}
+
+.button-style {
+        background-color: green; /*Couleur de fond*/
+        border: none; /*Pas de bordure*/
+        color: white; /*Couleur du texte*/
+        padding: 15px ; /* Espacement interne*/
+        text-align: center; /*alignement du texte*/
+        text-decoration: none;/*Pas de soulignement*/
+        font-size: 18px; /*Taille de police*/
+        margin: 4px; /* Espacement externe*/
+        cursor: pointer;/*Forme du curseur*/
+        font-weight: bold; /*Appliquer ke style gras*/
+          display: inline-block; /*centrer*/
+         width:205px;
+
+    }
+
+    
+.main{
+display: flex;
+    flex: 1; /*nombre de section après la première section*/
+    width: 70%; 
+    margin:  auto;
+}
+.content{
+    width:80%;
+    padding:20px;
+}
+    .sectionsleft{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+}
+.sectionleft{
+    background-color: #f0f0f0;
+    width:230px;
+    padding:10px;
+    margin:10px;
+}
+.containerleftright{
+    display: flex;
+    justify-content: space-between;
+    width:70%;
+    margin:  auto; /* Centre le contenu horizontalement*/
+}
+.left, .right{
+    width:60%;
+    padding: 5px;
+}
+
+
+
+</style>
 <body>
+<!-- Bannière d'en-tête affichant une illustration globale du parcours de formation -->
+<img src="ensibs.jpg" alt="image parcours" width="100%"  height="342">
+ <h1> Diplôme d'Ingénieur Génie Industriel 4.0 en apprentissage </h1>
+        
+<!-- Zone regroupant les boutons de navigation stylisés à l'aide de la balise <a> -->
+<div class="button-container">
+<a href="ensibs.html" class="button-style">ENSIBS</a>
+<a href="https://www-ensibs.univ-ubs.fr/fr/formations/rechercher-une-formation.html" 
+class="button-style">Nouvelle recherche</a>
+</div>
 
-    <!-- ================================= -->
-    <!-- IMAGE DE BANNIÈRE -->
-    <!-- ================================= -->
-
-    <!--
-        Grande image affichée en haut de page.
-        width="100%" => prend toute la largeur
-    -->
-    <img src="ensibs.jpg"
-         alt="image parcours"
-         width="100%"
-         height="342">
-
-    <!-- Titre principal -->
-    <h1>
-        Diplôme d'Ingénieur Génie Industriel 4.0 en apprentissage
-    </h1>
-
-    <!-- ================================= -->
-    <!-- BOUTONS PRINCIPAUX -->
-    <!-- ================================= -->
-
-    <div class="button-container">
-
-        <!--
-            Lien vers une autre page du projet
-        -->
-        <a href="ensibs.html"
-           class="button-style">
-
-            ENSIBS
-
-        </a>
-
-        <!--
-            Lien vers un site externe
-        -->
-        <a href="https://www-ensibs.univ-ubs.fr/fr/formations/rechercher-une-formation.html"
-           class="button-style">
-
-            Nouvelle recherche
-
-        </a>
-
-    </div>
-
-    <!-- ================================= -->
-    <!-- INFORMATIONS RAPIDES -->
-    <!-- ================================= -->
-
+    <!-- Disposition en colonnes juxtaposées pour synthétiser les détails administratifs majeurs (gauche/droite) -->
     <div class="containerleftright">
-
-        <!-- Partie gauche -->
         <div class="left">
-
-            <h2>Diplôme d'ingénieur</h2>
-            <hr>
-
-            <!--
-                hr = ligne horizontale
-            -->
-
-            <h2>École d'Ingénieurs ENSIBS</h2>
-            <hr>
-
-            <h2>Génie Industriel 4.0</h2>
-            <hr>
-
-            <h2>Durée : 3 année(s)</h2>
-            <hr>
-
-        </div>
-
-        <!-- Partie droite -->
-        <div class="right">
-
-            <h2>BAC +5</h2>
-            <hr>
-
-            <h2>Lorient</h2>
-            <hr>
-
-            <h2>Apprentissage</h2>
-            <hr>
-
-        </div>
-
+        <h2 style="color: green; font-size:18px">Diplôme d'ingénieur</h2>
+        <!-- Séparateur horizontal visuel sous forme de ligne fine -->
+        <hr>
+        <h2 style="color:green; font-size:18px">École d'Ingénieurs ENSIBS</h2>
+        <hr>
+        <h2 style="color: green; font-size:18px">Génie Industriels 4.0</h2>
+        <hr>
+        <h2 style="color: green; font-size:18px ">Durée : 3 année(s)</h2>
+        <hr>
+    </div>
+    <div class="right">
+        <h2 style="color: green; font-size:18px ">BACC +5</h2>
+        <hr>
+        <h2 style="color: green; font-size:18px ">Lorient</h2>
+        <hr>
+        <h2 style="color: green; font-size:18px ">Apprentissage</h2>
+        <hr>
+    </div>
     </div>
 
-    <!-- ================================= -->
-    <!-- CONTENU PRINCIPAL -->
-    <!-- ================================= -->
-
-    <div class="main">
-
-        <div class="content">
-
-            <!-- OBJECTIFS -->
-            <h2>Objectifs</h2>
-
-            <p>
-                Description des objectifs de la formation.
-            </p>
-
-            <!-- COMPÉTENCES -->
-            <h2>Savoir-faire et compétences</h2>
-
-            <p>
-                Liste des compétences développées.
-            </p>
-
-            <!-- FORMATION -->
-            <h2>Contenu de la formation</h2>
-
+        <!-- DEBUT DE LA SECTION PRINCIPALE (MAIN) DIVISÉE EN DEUX COLONNES FLEXBOX (CONTENT ET SECTIONSLEFT) -->
+        <div class="main">
+            <!-- Colonne de contenu textuel majeur (Objectifs, Compétences, Rythme...) -->
+            <div class="content">
+        <h2>Objectifs</h2>
+                <p>L’ingénieur Génie Industriel 4.0, conçoit et gère des processus et des systèmes qui améliorent la 
+                    qualité et la productivité de la chaîne de valeur des entreprises. Il s’attarde à mieux faire les 
+                    choses en réduisant les risques pour l’homme et l’environnement.</p>
+        <h2>Savoir-faire et compétences</h2>
+                <p>Comprendre, analyser et répondre aux besoins de l’industrie en déployant la technologie  la plus adaptée.
+                    Manager des équipes transverses et  multiculturelles.
+                    Conduire des projets complexes.
+                     Animer la transition numérique de l’industrie et innover.
+                     Promouvoir une démarche d’amélioration continue collaborative.
+                     Proposer et animer des systèmes de management qui garantissent la maîtrise des risques  industriels, environnementaux ainsi ceux pour la santé/sécurité des salariés.</p>
+        <h2>Contenu de la formation</h2>
             <h3>Formation sous statut d'apprenti</h3>
-
-            <p>
-                Alternance école / entreprise.
-            </p>
-
-            <!-- Image illustrant le parcours -->
-            <img src="parcours.jfif"
-                 alt="image parcours"
-                 width="500"
-                 height="342">
-
-            <!-- CONTRÔLE DES CONNAISSANCES -->
-            <h2>Contrôle des connaissances</h2>
-
+                 <p>1 mois à l'école et un mois en entreprise
+                      6 mois consécutifs en entreprise en dernière année
+                </p>
+             <!-- Illustration explicative schématisant le parcours de l'alternant -->
+             <img src="parcours.jfif" alt="image parcours" width="500" height="342">
+        <h2>Contrôle des connaissances</h2>
             <h3>La pédagogie ENSIBS</h3>
-
-            <p>
-                Description de la pédagogie.
-            </p>
-
-            <!-- MODALITÉS -->
-            <h2>Modalités de formation</h2>
-
-            <p>
-                Formation en alternance
-            </p>
-
-            <!-- RNCP -->
-            <h2>Référentiel RNCP</h2>
-
-            <!-- Lien externe -->
-            <a href="https://www.francecompetences.fr/recherche/rncp/35797/">
-
-                RNCP35797
-
-            </a>
-
-        </div>
-
-        <!-- ================================= -->
-        <!-- COLONNE DE DROITE -->
-        <!-- ================================= -->
-
-        <div class="sectionsleft">
-
-            <!-- ================================= -->
-            <!-- CONTACT -->
-            <!-- ================================= -->
-
-            <div class="sectionleft">
-
-                <p>Contact</p>
-
-                <p>
-                    École d'Ingénieurs ENSIBS
+                <p>Le socle scientifique et technique que doit posséder l’ingénieur est tout de suite mis en pratique  au travers de projets qui sont 
+                proposés par les entreprises et/ou par la recherche.
+                     Outils numériques, méthode des cas, formation à distance, serious games, classes inversées  traversent les disciplines et assurent l’acquisition de compétences recherchées par les  professionnels.
+                     L’évaluation des compétences acquises s’effectue en contrôle continu.
+                     Une mobility internationale de 3 à 6 mois doit être effectuée avec la possibilité d’un semestre  ou d’une double diplomation à l’étranger.
                 </p>
+                    <h2>Modalités de formation</h2>
+                <p>Formation en alternance</p>
+        <h2>Référentiel RNCP</h2>
+                <!-- Lien hypertexte direct pointant vers la fiche de certification officielle sur France Compétences -->
+                <a href="https://www.francecompetences.fr/recherche/rncp/35797/">RNCP35797</a> 
+                </div>
 
-                <p>Lorient</p>
+                <!-- Colonne latérale droite regroupant les fiches de contacts et les raccourcis de navigation secondaires -->
+                <div class="sectionsleft">
+                    <!-- Bloc de contact de l'équipe pédagogique et administrative -->
+                    <div class="sectionleft">
+                            <p style="color: green; font-weight:bold;">Contact</p>
+                            <p style="font-weight:bold;">École d'Ingénieurs  ENSIBS</p>
+                            <p>Lorient</p>
+                            <p style="font-weight: bold;">Responsable pédagogique<br>Perrine Le Meur</p>
+                            <p>Tél : 0297874025</p>
+                            
+                            <!-- Raccourci déclenchant automatiquement l'ouverture de la messagerie par défaut de l'utilisateur -->
+                            <a href="mailto:perrine.le-meur@univ-ubs.fr" class="button-style">Envoyer un mail</a>
+                            
+                            <p style="font-weight: bold;">Contact administratif Marion Tonnerre</p>
+                            
+                            <a href="mailto:marion.tonnerre@univ-ubs.fr" class="button-style">Envoyer un mail</a>
+                    </div>
+                    
+                
+                    <!-- Bloc d'informations complémentaires fournissant un lien direct vers la procédure d'inscription -->
+                    <div class="sectionleft"> 
+                        <p style="color: green; font-weight:bold;">Informations complémmentaires</p>
+                        <a style="color: green; font-size: 18px; font-weight:bold;" href="https://www-ensibs.univ-ubs.fr/fr/rejoindre-l-ensibs/en-cycle-ingenieur/candidater-1.html">Comment candidater ?</a> 
+                    </div>
 
-                <p>
-                    Responsable pédagogique
-                    Perrine Le Meur
-                </p>
+                    <!-- Bloc de téléchargement de documents de référence de l'école -->
+                    <div class="sectionleft"> 
+                        <p style="color: green; font-weight:bold;">Documents</p>
+                        <!-- Petite icône visuelle indiquant la présence d'un fichier au format PDF -->
+                        <img src="pdf.png" alt="icone pdf" width="20" height="20"> 
+                        <a href="pdf3.pdf">Fiche formation alternance </a>
+                        <span>(68 Ko)</span></p> 
+                    </div>
 
-                <p>
-                    Tél : 0297874025
-                </p>
+                    <!-- Liens d'informations pratiques et d'accompagnement des étudiants -->
+                    <div class="sectionleft">
+                        <a href="https://www.univ-ubs.fr/fr/formation-initiale-continue/tarifs.html" class="button-style" >Tarifs</a>   
+                        <a href="https://www.univ-ubs.fr/fr/vie-des-campus/campus/sante-handicap.html" class="button-style">Santé & Handicap</a>
+                    </div>
+            
+                    <!-- Bouton d'accès rapide vers la page dédiée aux cérémonies de remise de diplômes -->
+                    <div class="sectionleft">
+                        <a href="Cérémonie.html" class="button-style" style="width:210px;">Cérémonies</a>
+                    </div>
 
-                <!--
-                    mailto ouvre directement
-                    le logiciel de messagerie
-                -->
-                <a href="mailto:perrine.le-meur@univ-ubs.fr"
-                   class="button-style">
+                    <!-- Bouton d'accès rapide vers l'espace de diffusion des médias et vidéos de l'école -->
+                    <div class="sectionleft">
+                        <a href="Média.html" class="button-style" style="width:210px;">Médias</a>
+                    </div>
 
-                    Envoyer un mail
+                    <!-- Bouton d'accès rapide vers le pôle et les projets de recherche de l'école -->
+                    <div class="sectionleft">
+                        <a href="recherche.html" class="button-style" style="width:210px;">Recherche</a>
+                    </div>
 
-                </a>
+                    <!-- Bouton d'accès rapide vers le portail des critères et modalités d'admission -->
+                    <div class="sectionleft">
+                        <a href="admission.html" class="button-style" style="width:210px;">Admission</a>
+                    </div>
 
-                <p>
-                    Contact administratif
-                    Marion Tonnerre
-                </p>
-
-                <a href="mailto:marion.tonnerre@univ-ubs.fr"
-                   class="button-style">
-
-                    Envoyer un mail
-
-                </a>
-
+                    <!-- Bouton d'accès rapide vers les ressources d'informations complémentaires -->
+                    <div class="sectionleft">
+                        <a href="plus_d'informations.html" class="button-style" style="width:210px;">Plus d'informations</a>
+                    </div>
             </div>
-
-            <!-- ================================= -->
-            <!-- INFORMATIONS COMPLÉMENTAIRES -->
-            <!-- ================================= -->
-
-            <div class="sectionleft">
-
-                <p>
-                    Informations complémentaires
-                </p>
-
-                <a href="https://www-ensibs.univ-ubs.fr/fr/rejoindre-l-ensibs/en-cycle-ingenieur/candidater-1.html">
-
-                    Comment candidater ?
-
-                </a>
-
-            </div>
-
-            <!-- ================================= -->
-            <!-- DOCUMENT PDF -->
-            <!-- ================================= -->
-
-            <div class="sectionleft">
-
-                <p>Documents</p>
-
-                <!-- Icône PDF -->
-                <img src="pdf.png"
-                     alt="icone pdf"
-                     width="20"
-                     height="20">
-
-                <!-- Téléchargement PDF -->
-                <a href="pdf3.pdf">
-
-                    Fiche formation alternance
-
-                </a>
-
-            </div>
-
-            <!-- ================================= -->
-            <!-- BOUTONS DE NAVIGATION -->
-            <!-- ================================= -->
-
-            <!-- Chaque bouton mène vers une autre page -->
-
-            <div class="sectionleft">
-                <a href="Cérémonie.html"
-                   class="button-style">
-
-                    Cérémonies
-
-                </a>
-            </div>
-
-            <div class="sectionleft">
-                <a href="Média.html"
-                   class="button-style">
-
-                    Médias
-
-                </a>
-            </div>
-
-            <div class="sectionleft">
-                <a href="recherche.html"
-                   class="button-style">
-
-                    Recherche
-
-                </a>
-            </div>
-
-            <div class="sectionleft">
-                <a href="admission.html"
-                   class="button-style">
-
-                    Admission
-
-                </a>
-            </div>
-
-            <div class="sectionleft">
-                <a href="plus_d'informations.html"
-                   class="button-style">
-
-                    Plus d'informations
-
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
 </body>
 </html>
