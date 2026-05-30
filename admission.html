@@ -1,193 +1,132 @@
-<!-- Indique que l'on utilise HTML5 -->
 <!DOCTYPE html>
-
-<!-- Début de la page HTML en français -->
 <html lang="fr">
-
 <head>
 
-    <!-- Encodage UTF-8 pour les accents -->
+    <!-- Encodage des caractères (accents) -->
     <meta charset="UTF-8">
 
-    <!-- Adaptation mobile -->
+    <!-- Adaptation responsive mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Titre affiché dans l'onglet -->
-    <title>Admission - Génie Industriel 4.0</title>
+    <title>Admission - GI 4.0</title>
 
+    <style>
+
+    /* =========================
+       STYLE GLOBAL DE LA PAGE
+    ========================= */
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: white;
+        color: black;
+    }
+
+    /* Logo en haut de page */
+    .logo {
+        width: 230px;
+        margin: 15px;
+    }
+
+    /* Conteneur principal */
+    .container_informations {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    /* Titres */
+    h1 {
+        font-size: 28px;
+    }
+
+    /* =========================
+       TABLEAUX
+    ========================= */
+    .tableau {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tableau th,
+    .tableau td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    /* =========================
+       BOUTON
+    ========================= */
+    button {
+        background: lightblue;
+        border: 3px solid black;
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: pink;
+    }
+
+    </style>
 </head>
 
 <body>
 
-    <!--
-        Logo cliquable.
-        Quand on clique dessus on revient vers index.html
-    -->
+    <!-- Logo cliquable vers page accueil -->
     <a href="index.html">
-        <img src="logoGI.jpg"
-             alt="Logo Génie Industriel ENSIBS"
-             class="logo">
+        <img src="logoGI.jpg" class="logo" alt="Logo ENSIBS">
     </a>
 
-    <!-- Conteneur principal -->
     <div class="container_informations">
 
         <!-- Titre principal -->
-        <h1>Pré-requis obligatoires</h1>
+        <h1>Admission Génie Industriel 4.0</h1>
 
-        <h2>Bac +2</h2>
-
-        <!-- Section calendrier -->
-        <h1>Calendrier</h1>
-
-        <!-- Tableau des sessions d'admission -->
+        <!-- ========================= -->
+        <!-- TABLEAU D'INFORMATIONS -->
+        <!-- ========================= -->
         <table class="tableau">
 
-            <!-- Première ligne = en-têtes -->
+            <!-- Ligne d'en-tête -->
             <tr>
-                <th>Génie Industriel 4.0 (en apprentissage)</th>
-                <th>Session 1</th>
-                <th>Session 2</th>
-                <th>Session 3</th>
+                <th>Session</th>
+                <th>Date</th>
             </tr>
 
-            <!-- Ligne du tableau -->
+            <!-- Données -->
             <tr>
-                <td>Ouverture e-candidat</td>
-                <td>22 Janvier</td>
-                <td>4 Mars</td>
-                <td>22 Avril</td>
-            </tr>
-
-            <tr>
-                <td>Clôture e-candidat</td>
-                <td>3 Mars</td>
-                <td>21 Avril</td>
-                <td>9 Juin</td>
+                <td>Ouverture</td>
+                <td>Janvier</td>
             </tr>
 
         </table>
 
-        <!-- Nouveau tableau -->
-        <h1>Formation</h1>
+        <!-- ========================= -->
+        <!-- JAVASCRIPT INTERACTIF -->
+        <!-- ========================= -->
 
-        <table class="tableau programme">
+        <!-- Texte modifié par JS -->
+        <h2 id="titreJS">Actualités</h2>
 
-            <!-- Titre du tableau -->
-            <caption>Programme de formation</caption>
-
-            <tr>
-
-                <!-- colspan="2" fusionne 2 colonnes -->
-                <th colspan="2">UEs</th>
-
-                <th>Semaines entreprises</th>
-
-            </tr>
-
-            <tr>
-                <td>1ère année</td>
-                <td>8 UEs</td>
-                <td>31 semaines</td>
-            </tr>
-
-        </table>
-
-        <!-- Liste non ordonnée -->
-        <h1>Organisation de la formation</h1>
-
-        <ul>
-
-            <!-- Élément de liste -->
-            <li>1ère année (60 crédits ECTS)</li>
-
-            <!-- Description liée -->
-            <dd>> Semestre 5</dd>
-            <dd>> Semestre 6</dd>
-
-        </ul>
-
-        <!-- Liste ordonnée -->
-        <h1>Les stages</h1>
-
-        <ol>
-
-            <!-- Numérotation automatique -->
-            <li>Première année : 8 semaines</li>
-
-            <li>
-                Deuxième année : 12 semaines
-
-                <!-- Sous-liste -->
-                <ul>
-                    <li>en France</li>
-                    <li>à l'étranger</li>
-                </ul>
-
-            </li>
-
-        </ol>
-
-        <!-- Encadré chiffres clés -->
-        <div class="chiffres">
-
-            <p>
-
-                <strong>Chiffres clés :</strong><br>
-
-                2 campus à Vannes et Lorient.<br>
-
-                800 élèves.
-
-            </p>
-
-        </div>
-
-        <!-- Partie Actualités -->
-        <div class="actualites">
-
-            <!--
-                id utilisé en JavaScript
-                pour retrouver cet élément
-            -->
-            <h2 id="myfooterJS">
-
-                VOULEZ-VOUS SAVOIR NOS ACTUALITÉS ?
-
-            </h2>
-
-            <!--
-                onclick lance la fonction JavaScript
-                quand on clique
-            -->
-            <button onclick="AffichageTexte()">
-
-                Découvrir nos actualités
-
-            </button>
-
-        </div>
+        <!-- Bouton déclenchant JS -->
+        <button onclick="changerTexte()">
+            Voir actualité
+        </button>
 
     </div>
 
     <script>
 
-        /*
-            Fonction exécutée au clic
-            sur le bouton
-        */
-        function AffichageTexte() {
+        /* ======================================
+           FONCTION JAVASCRIPT
+           (modifie le texte HTML)
+        ====================================== */
+        function changerTexte() {
 
-            /*
-                Récupère l'élément ayant l'id
-                "myfooterJS"
-            */
-            document.getElementById("myfooterJS").innerHTML =
-
-            /*
-                Remplace le texte affiché
-            */
-            "L'ENSIBS DEVIENT LA 5ÈME ÉCOLE ASSOCIÉE AU RÉSEAU POLYTECH <3";
+            // récupération de l'élément par son id
+            document.getElementById("titreJS").innerHTML =
+                "🚀 Nouvelle actualité ENSIBS";
 
         }
 
