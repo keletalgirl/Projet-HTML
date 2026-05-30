@@ -1,163 +1,144 @@
-<!-- Déclare l'utilisation de HTML5 -->
 <!DOCTYPE html>
-
-<!-- Début de la page HTML -->
 <html lang="fr">
-
 <head>
-
-    <!-- Encodage UTF-8 -->
-    <meta charset="UTF-8">
-
-    <!-- Adaptation aux téléphones/tablettes -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <!-- Titre affiché dans l'onglet -->
-    <title>ENSIBS</title>
-
-    <!-- Liaison éventuelle avec un fichier CSS -->
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENSIBS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<style>
+        
+        html,body{
+            height: 100%;
+            margin: 0; /*supprimer les marges*/
+            padding: 0;/*Supprimer les espacements*/
+        }
+        body{
+            font-family: Arial;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+        header, footer{
+            background-color: lightpink;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header{
+            font-size: 32px;
+        }
+        footer{
+            font-size: 16px;
+        }
+        .container{
+            flex: 1;
+            display: grid; 
+            width: 100%; 
+            margin: 0;       
+        }
+        nav, article{
+            padding: 20px;
+        }
+        nav{
+            background-color: whitesmoke;
+            flex: 1;
+            font-size: 15px;
+        }
+        article{
+            background-color: white;
+            font-size: 18px;
+        }
+        nav ul{
+            list-style-type: none;/*Supprimer les puces ou numéros par défaut(ordonnée ou non)*/
+            padding: 0;
+        }
+        nav ul li{
+            flex: 1;
+        }
+        nav ul li a {
+            color: black;
+            font-size: 18px;
+            padding: 15px;
+            border: 1px solid whitesmoke;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;/*la largeur et la hauteur incluent les bordures et les espacements
+            internes*/
+        }
+        nav ul li a:hover{
+            background-color: lightpink;
+            color: white;
+        }
+        .btn {
+            display: inline-block; /*élément en ligne*/
+            padding: 15px 25px;
+            margin: 5px 0;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            background-color: lightpink;
+            border-radius: 5px;
+            text-decoration: none;/*enlever le soulignement du texte*/
+        }
+        .btn:hover{
+            background-color: lightgreen;
+        }
+
+        @media (min-width: 600px){/*règle de média apploquée lorsque la largeur de l"écran est d'au moins 600 pixels*/
+            .container{
+                grid-template-columns: 20% 80%;/*deux colonnes*/
+                grid-template-rows: none;/*aucune ligne*/
+            }
+            nav{
+                order: 1;/*Placé en premier dans l'ordre de la grille*/
+            }
+            article{
+            order: 2;    
+            }
+        }
+    </style>
 
 <body>
 
-    <!-- ========================= -->
-    <!-- EN-TÊTE -->
-    <!-- ========================= -->
+<!-- Bandeau d'en-tête (Header) présentant le nom global de l'établissement -->
+<header>
+    ENSIBS
+</header>
 
-    <!--
-        header = partie haute du site
-    -->
-    <header>
+<!-- Conteneur central géré par une architecture Grid CSS répartissant la navigation et le texte informatif -->
+<div class="container">
+    <!-- Barre ou zone latérale de navigation contenant le menu des redirections externes et internes -->
+    <nav>
+        <!-- Liste de liens de redirection structurels -->
+        <ul>
+            <li><a href="https://www.univ-ubs.fr/fr/index.html" class="btn">UBS</a></li>
+            <li><a href ="https://www-ensibs.univ-ubs.fr/fr/formations/formations/diplomed-ingenieur-DI/sciences-technologies-sante-STS/diplome-d-ingenieur-genieindustriel-4-0-IGEI00_207.html" class="btn">Parcours Classique</a></li>
+            <li><a href="apprentissage.html" class="btn">Parcours Alternance</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Corps de texte descriptif principal décrivant les particularités de l'école d'ingénieurs -->
+    <article>
+        <h2>Découvrez l'école</h2>
+        <p>
+            Implantée au sein de l'Université de Bretagne Sud, l'ENSIBS propose plusieurs spécialités sur Lorient et Vannes.
+        </p>
+        <p>
+            blablablabla
+        </p>
+        <p>
+            blablablabla...
+        </p>
+    </article>
 
-        ENSIBS
+</div>
 
-    </header>
-
-    <!-- ========================= -->
-    <!-- CONTENU PRINCIPAL -->
-    <!-- ========================= -->
-
-    <div class="container">
-
-        <!-- ========================= -->
-        <!-- MENU DE NAVIGATION -->
-        <!-- ========================= -->
-
-        <!--
-            nav = zone contenant
-            les liens de navigation
-        -->
-        <nav>
-
-            <ul>
-
-                <li>
-
-                    <!--
-                        Lien vers le site UBS
-                    -->
-                    <a href="https://www.univ-ubs.fr/fr/index.html"
-                       class="btn">
-
-                        UBS
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <!--
-                        Lien vers le parcours classique
-                    -->
-                    <a href="https://www-ensibs.univ-ubs.fr/fr/formations/formations/diplomed-ingenieur-DI/sciences-technologies-sante-STS/diplome-d-ingenieur-genieindustriel-4-0-IGEI00_207.html"
-                       class="btn">
-
-                        Parcours Classique
-
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <!--
-                        Lien vers la page apprentissage
-                    -->
-                    <a href="apprentissage.html"
-                       class="btn">
-
-                        Parcours Alternance
-
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <!-- ========================= -->
-        <!-- ARTICLE -->
-        <!-- ========================= -->
-
-        <!--
-            article = contenu principal
-        -->
-        <article>
-
-            <h2>
-
-                Découvrez l'école
-
-            </h2>
-
-            <p>
-
-                Implantée au sein de l'Université de Bretagne Sud,
-                l'ENSIBS propose plusieurs spécialités
-                sur Lorient et Vannes.
-
-            </p>
-
-            <p>
-
-                blablablabla
-
-            </p>
-
-            <p>
-
-                blablablabla...
-
-            </p>
-
-        </article>
-
-    </div>
-
-    <!-- ========================= -->
-    <!-- PIED DE PAGE -->
-    <!-- ========================= -->
-
-    <!--
-        footer = bas du site
-    -->
-    <footer>
-
-        Contactez-nous :
-        contact@ensibs.fr
-
-        |
-
-        Suivez-nous :
-        Facebook - Twitter
-
-    </footer>
+<!-- Pied de page (Footer) regroupant les coordonnées de contact génériques et les liens des réseaux sociaux -->
+<footer>
+    Contactez-nous : contact@ensibs.fr | Suivez-nous : Facebook - Twitter
+</footer>
 
 </body>
-
 </html>
